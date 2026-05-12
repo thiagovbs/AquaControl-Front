@@ -121,7 +121,7 @@ export default function LeiturasCRUD() {
               <select value={formData.statusPagamento} onChange={e => setFormData({...formData, statusPagamento: e.target.value})} className="w-full border p-2 rounded">
                 <option value="PENDENTE">Pendente</option>
                 <option value="PAGO">Pago</option>
-                <option value="FATURADO">Pago</option>
+                <option value="FATURADO">Faturado</option>
                 <option value="ATRASADO">Atrasado</option>
               </select>
             </div>
