@@ -6,7 +6,9 @@ import {
   Users, 
   UserCog, 
   LogOut, 
-  Droplets 
+  Droplets,
+  FileText,
+  Settings 
 } from 'lucide-react';
 
 export default function Sidebar() {
