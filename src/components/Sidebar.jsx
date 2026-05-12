@@ -27,8 +27,9 @@ export default function Sidebar() {
     { path: '/unidades', name: 'Unidades', icon: <Home size={20} />, show: true },
     { path: '/proprietarios', name: 'Proprietários', icon: <Users size={20} />, show: true },
     { path: '/leituras', name: 'Leituras e Faturas', icon: <Droplets size={20} />, show: true },
+    { path: '/faturamento', name: 'Faturamento', icon: FileText, show: isAdmin }, // Validação de ADMIN
+    { path: '/configuracoes', name: 'Configurações', icon: Settings, show: isAdmin }, // Validação de ADMIN
     { path: '/usuarios', name: 'Usuários', icon: <UserCog size={20} />, show: isAdmin }, // Validação de ADMIN
-    
   ];
 
   return (
