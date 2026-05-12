@@ -121,7 +121,8 @@ export default function UnidadesCRUD() {
                   <td className="px-6 py-4 text-gray-900">
                     <div className="flex items-center">
                       <User className="h-4 w-4 mr-2 text-gray-400" />
-                      {u.proprietario.nome}
+                      {/* O ?. protege o código e o || define um valor padrão */}
+                      {u.proprietario?.nome || 'Sem proprietário'}
                     </div>
                   </td>
                   <td className="px-6 py-4">
