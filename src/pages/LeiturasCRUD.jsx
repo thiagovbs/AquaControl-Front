@@ -121,6 +121,7 @@ export default function LeiturasCRUD() {
               <select value={formData.statusPagamento} onChange={e => setFormData({...formData, statusPagamento: e.target.value})} className="w-full border p-2 rounded">
                 <option value="PENDENTE">Pendente</option>
                 <option value="PAGO">Pago</option>
+                <option value="FATURADO">Pago</option>
                 <option value="ATRASADO">Atrasado</option>
               </select>
             </div>
@@ -162,6 +163,7 @@ export default function LeiturasCRUD() {
                   <td className="px-6 py-4 font-bold text-gray-700">R$ {l.valorTotal.toFixed(2)}</td>
                   <td className="px-6 py-4">
                     {l.statusPagamento === 'PAGO' && <span className="flex items-center w-fit px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full"><CheckCircle size={12} className="mr-1"/> PAGO</span>}
+                    {l.statusPagamento === 'FATURADO' && <span className="flex items-center w-fit px-2 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full"><CheckCircle size={12} className="mr-1"/> FATURADO</span>}
                     {l.statusPagamento === 'PENDENTE' && <span className="flex items-center w-fit px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full"><Clock size={12} className="mr-1"/> PENDENTE</span>}
                     {l.statusPagamento === 'ATRASADO' && <span className="flex items-center w-fit px-2 py-1 bg-red-100 text-red-700 text-xs font-bold rounded-full"><AlertCircle size={12} className="mr-1"/> ATRASADO</span>}
                   </td>
