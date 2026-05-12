@@ -31,7 +31,7 @@ export default function Faturamento() {
       // Atualiza o valor total no banco de dados e muda o status
       await api.put(`/api/leituras/${id}`, { 
         valorTotal: Number(valorCalculado.toFixed(2)),
-        statusPagamento: 'FATURADO'
+        statusPagamento: 'PENDENTE'
       });
       alert('Fatura gerada com sucesso!');
       carregarLeituras(); // Recarrega a lista
@@ -102,7 +102,7 @@ export default function Faturamento() {
                       </div>
                     </td>
                     <td className="px-6 py-4 text-right">
-                      {leitura.statusPagamento === 'FATURADO' ? (
+                      {leitura.statusPagamento === 'PENDENTE' ? (
                         <span className="text-green-600 font-bold">
                           R$ {leitura.valorTotal.toFixed(2).replace('.', ',')}
                         </span>
@@ -113,9 +113,9 @@ export default function Faturamento() {
                       )}
                     </td>
                     <td className="px-6 py-4 text-center">
-                      {leitura.statusPagamento === 'FATURADO' ? (
+                      {leitura.statusPagamento === 'PENDENTE' ? (
                         <span className="inline-flex items-center text-green-600 bg-green-50 px-3 py-1 rounded-full text-sm font-medium">
-                          <CheckCircle className="w-4 h-4 mr-1" /> Faturado
+                          <CheckCircle className="w-4 h-4 mr-1" /> Pendente
                         </span>
                       ) : (
                         <button 
