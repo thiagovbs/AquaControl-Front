@@ -102,7 +102,7 @@ export default function Faturamento() {
                       </div>
                     </td>
                     <td className="px-6 py-4 text-right">
-                      {leitura.statusPagamento === 'PENDENTE' || leitura.statusPagamento === 'ATRASADO' ? (
+                      {leitura.statusPagamento === 'PENDENTE' ? (
                         <span className="text-green-600 font-bold">
                           R$ {leitura.valorTotal.toFixed(2).replace('.', ',')}
                         </span>
