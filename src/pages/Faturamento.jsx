@@ -113,9 +113,9 @@ export default function Faturamento() {
                       )}
                     </td>
                     <td className="px-6 py-4 text-center">
-                      {leitura.statusPagamento === 'PENDENTE' ? (
+                      {leitura.statusPagamento === 'PAGO' ? (
                         <span className="inline-flex items-center text-green-600 bg-green-50 px-3 py-1 rounded-full text-sm font-medium">
-                          <CheckCircle className="w-4 h-4 mr-1" /> Pendente
+                          <CheckCircle className="w-4 h-4 mr-1" /> Paga
                         </span>
                       ) : (
                         <button 
