@@ -30,7 +30,7 @@ export default function Faturamento() {
     try {
       // Atualiza o valor total no banco de dados e muda o status
       await api.put(`/api/leituras/${id}`, { 
-        valorTotal: valorCalculado,
+        valorTotal: Number(valorCalculado.toFixed(2)),
         statusPagamento: 'FATURADO'
       });
       alert('Fatura gerada com sucesso!');
