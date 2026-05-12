@@ -31,7 +31,7 @@ export default function Faturamento() {
       // Atualiza o valor total no banco de dados e muda o status
       await api.patch(`/api/leituras/${id}/faturar`, { 
         valorTotal: Number(valorCalculado.toFixed(2)),
-        statusPagamento: 'PENDENTE'
+        statusPagamento: 'FATURADO'
       });
       alert('Fatura gerada com sucesso!');
       carregarLeituras(); // Recarrega a lista
@@ -113,9 +113,13 @@ export default function Faturamento() {
                       )}
                     </td>
                     <td className="px-6 py-4 text-center">
-                      {leitura.statusPagamento === 'PAGO' ? (
-                        <span className="inline-flex items-center text-green-600 bg-green-50 px-3 py-1 rounded-full text-sm font-medium">
-                          <CheckCircle className="w-4 h-4 mr-1" /> Paga
+                      {leitura.statusPagamento === 'PAGO' || leitura.statusPagamento === 'FATURADO' ? (
+                        <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
+                          leitura.statusPagamento === 'PAGO' 
+                            ? 'text-green-600 bg-green-50' 
+                            : 'text-blue-600 bg-blue-50' 
+                        }`}>
+                          <CheckCircle className="w-4 h-4 mr-1" /> {leitura.statusPagamento.charAt(0) + leitura.statusPagamento.slice(1).toLowerCase()}
                         </span>
                       ) : (
                         <button 
