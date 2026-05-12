@@ -7,6 +7,8 @@ import UnidadesCRUD from './pages/UnidadesCRUD';
 import ProprietariosCRUD from './pages/ProprietariosCRUD';
 import UsuariosCRUD from './pages/UsuariosCRUD';
 import LeiturasCRUD from './pages/LeiturasCRUD';
+import Faturamento from './pages/Faturamento';
+import Configuracoes from './pages/Configuracoes';
 
 // Componente de Layout para telas autenticadas
 const PrivateLayout = () => {
@@ -66,7 +68,26 @@ function App() {
           <Route path="/proprietarios" element={<ProprietariosCRUD />} />
           <Route path="/leituras" element={<LeiturasCRUD />} />
           
-          {/* Rota Protegida para Usuários (Só Admin acessa via URL também) */}
+          {/* Rotas Protegidas (Só Admin acessa via URL também) */}
+
+          <Route 
+            path="/faturamento" 
+            element={
+              <ProtectedRoute roleRequired="ADMIN">
+                <Faturamento />
+              </ProtectedRoute>
+            } 
+          />
+          
+          <Route 
+            path="/configuracoes" 
+            element={
+              <ProtectedRoute roleRequired="ADMIN">
+                <Configuracoes />
+              </ProtectedRoute>
+            } 
+          />
+          
           <Route path="/usuarios" element={
             <AdminRoute>
               <UsuariosCRUD />
