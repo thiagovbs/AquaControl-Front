@@ -20,7 +20,7 @@ export default function LeiturasCRUD() {
     try {
       const [resLeituras, resUnidades] = await Promise.all([
         api.get('/api/leituras', config),
-        api.get('/unidades', config)
+        api.get('/api/unidades', config)
       ]);
       setLeituras(resLeituras.data);
       setUnidades(resUnidades.data);
