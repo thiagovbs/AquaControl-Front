@@ -29,7 +29,7 @@ export default function Faturamento() {
   const confirmarFaturamento = async (id, valorCalculado) => {
     try {
       // Atualiza o valor total no banco de dados e muda o status
-      await api.put(`/api/leituras/${id}`, { 
+      await api.patch(`/api/leituras/${id}/faturar`, { 
         valorTotal: Number(valorCalculado.toFixed(2)),
         statusPagamento: 'PENDENTE'
       });
