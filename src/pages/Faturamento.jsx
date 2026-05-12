@@ -4,10 +4,8 @@ import api from '../services/api';
 
 export default function Faturamento() {
   const [leituras, setLeituras] = useState([]);
-  const [tarifa, setTarifa] = useState(5.90); // Preço padrão do m³
-  const [loading, setLoading] = useState(true);
-
   const [tarifa, setTarifa] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     api.get('/api/config').then(res => {
