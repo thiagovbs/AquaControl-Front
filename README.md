@@ -14,3 +14,10 @@ Onde está sendo executado: Vercel
 Configuração de Rotas: Utiliza um arquivo vercel.json para garantir que o roteamento SPA (React Router) funcione sem erros 404.
 
 Integração: Conecta-se ao Backend via URL configurada no VITE_API_URL.
+
+🚀 Como Rodar Localmente
+ 1. Clonar este repositório!
+ 2. Configurar o Frontend:
+    Rode npm install.
+    Crie um arquivo .env apontando para o seu backend local: VITE_API_URL=http://localhost:PORTA.
+    Inicie com npm run dev.
